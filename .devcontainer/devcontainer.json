@@ -12,7 +12,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt"
+	"postCreateCommand": "pip3 install --user -r requirements.txt",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
@@ -20,9 +20,20 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 
-	// Coverage.py is a tool for measuring code coverage of Python programs.
-	//"ghcr.io/devcontainers-contrib/features/coverage-py:2": {},
-
-	// The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
-	//"ghcr.io/hspaans/devcontainer-features/pytest:1": {}
+	"customizations": {
+		// Coverage.py is a tool for measuring code coverage of Python programs.
+		"coverage-py": {
+			"enabled": true
+		},
+		// The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
+		"pytest": {
+			"enabled": true
+		},
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
+			]
+		}
+	}
 }
