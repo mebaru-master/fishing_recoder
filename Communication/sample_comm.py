@@ -13,6 +13,7 @@ url = 'http://weather.livedoor.com/forecast/webservice/json/v1?city=160010'
 response = requests.get(url)
 data = response.json()
 pprint.pprint(data)
+
 # 週間天気予報を表示する
 for weather in data['forecasts']:
     print(weather['dateLabel'] + ' : ' + weather['telop'])
